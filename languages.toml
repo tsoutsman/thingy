@@ -1,0 +1,28 @@
+[[language]]
+name = "markdown"
+file-types = ["md"]
+language-server = { command = "mdls" }
+
+[[language]]
+name = "haskell"
+file-types = ["hs"]
+language-server = { command = "haskell-language-server-9.2.7" }
+
+[[language]]
+name = "rust"
+auto-format = false
+
+[[language]]
+name = "assembly"
+scope = "source.asm"
+file-types = ["asm", "s"]
+roots = []
+grammar = "assembly"
+
+[[grammar]]
+name = "assembly"
+source = { git = "https://github.com/bearcove/tree-sitter-x86asm", rev = "9b0fab1092a2fe01e285ea4c892faa08b43cf125" }
+
+[language.config]
+# diagnostics = { disabled = ["type-mismatch", "unresolved-proc-macro"] }
+diagnostics = { disabled = ["inactive-code", "unresolved-proc-macro"] }
